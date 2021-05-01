@@ -103,12 +103,11 @@ const routes = [
   },
   {
     path: '/admin',
-    name: 'DashBoard',
     component: DashBoard,
     meta: { requiresAuth: true },
     children: [
       {
-        path: 'orderList',
+        path: '',
         name: 'OrderList',
         component: OrderList,
         meta: { requiresAuth: true }
