@@ -227,8 +227,8 @@ export default {
       })
     },
     uploadFile () {
-      const uploadFile = this.$refs.files.files[0]
       const vm = this
+      const uploadFile = vm.$refs.files.files[0]
       const formData = new FormData()
       vm.status.isUploading = true
       formData.append('file-to-upload', uploadFile)

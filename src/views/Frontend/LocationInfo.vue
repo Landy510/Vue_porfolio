@@ -39,8 +39,8 @@
 import L from 'leaflet'
 let osmMap = {}
 const storeTile = ['Berserker 美麗華店', 'Berserker 南西店', 'Berserker 西門漢中店', 'Berserker 台中都會店', 'Berserker 佳瑪店', 'Berserker 大江購物店', 'Berserker 家樂福店', 'Berserker 勤美成品店']
-const storeImage = ['https://upload.cc/i1/2020/12/24/Rxfch5.jpg', 'https://upload.cc/i1/2021/02/18/CTu2Xn.jpg', 'https://upload.cc/i1/2021/02/18/SbnF9j.jpg', 'https://upload.cc/i1/2021/02/18/cyrh8S.jpg',
-  'https://upload.cc/i1/2021/02/18/xmQ32T.jpg', 'https://upload.cc/i1/2021/02/18/hqHAcb.jpg', 'https://upload.cc/i1/2021/02/18/6YeM1q.jpg', 'https://upload.cc/i1/2021/02/18/8OrZQj.jpg']
+const storeImage = ['https://i.postimg.cc/FHQ5LrTf/location1.jpg', 'https://i.postimg.cc/Kc6v0y9b/location2.jpg', 'https://i.postimg.cc/C1ZS4vkd/location3.jpg', 'https://i.postimg.cc/sXZCWMCh/location4.jpg',
+  'https://i.postimg.cc/wBCbSFn1/location5.jpg', 'https://i.postimg.cc/L4Cj5h6T/location6.jpg', 'https://i.postimg.cc/SRJ2C7NG/location7.jpg', 'https://i.postimg.cc/d0wh4KV3/location8.jpg']
 const storedecription = ['本店有提供飲食控制課程', '本店有提供最全面的重訓教學', '本店可以購買到各種重訓護具', '本店有提供大量的自由重量的訓練器材', '本店主要提供有氧的一些器材', '本店提供阻力訓練還有暴力上槓',
   '本店有提供讓各方健友一起聚聚', '本店主要是讓大家打打籃球和羽球啦']
 
