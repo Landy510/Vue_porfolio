@@ -21,11 +21,11 @@ export default {
   },
   computed: {
     progress () {
-      if (this.$route.path === '/customerOrder/customer1') {
+      if ((/\/customerOrder\/customer1/).test(this.$route.path)) {
         return 25
-      } else if (this.$route.path === '/customerOrder/customer2') {
+      } else if ((/\/customerOrder\/customer2/).test(this.$route.path)) {
         return 50
-      } else if (this.$route.path.match(/\/customerOrder\/CustomerCheckout/)) {
+      } else if ((/\/customerOrder\/CustomerCheckout/).test(this.$route.path)) {
         return 75
       } else {
         return 100
