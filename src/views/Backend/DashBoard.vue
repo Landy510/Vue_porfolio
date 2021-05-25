@@ -11,7 +11,7 @@
               管理員頁面
           </li>
           <li class="list-group-item border-0 p-0">
-            <router-link class="nav-link text-dark" to="/admin/orderList">
+            <router-link class="nav-link text-dark" to="/admin">
               <font-awesome-icon :icon="['fas', 'box-open']" />
               產品列表
             </router-link>
