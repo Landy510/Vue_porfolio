@@ -50,7 +50,7 @@
                       <div class="card-body p-0 pb-1">
                         <p class="card-text mb-0 pt-2 px-2 d-flex justify-content-between font-weight-bold h5" >
                           <span>{{ item.title }}</span>
-                          <font-awesome-icon class="lecture_heart" :class="{'text-danger':item.like}" :icon="['far','heart']" size="lg" @click="getLike(item)"></font-awesome-icon>
+                          <font-awesome-icon class="lecture_heart" :class="{'text-danger':item.like}" :icon="['far','heart']" size="lg" @click.stop.prevent="getLike(item)"></font-awesome-icon>
                         </p>
                         <p class="card-text mb-2 px-2 text-muted" >
                           {{ item.description }}
