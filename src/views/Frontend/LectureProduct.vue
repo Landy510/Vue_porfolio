@@ -17,7 +17,7 @@
           <div class="d-flex mb-4 justify-content-center justify-content-sm-end">
             <form class="form-inline">
               <div class="input-group">
-              <input class="form-control rounded-0" type="text" v-model="searchText" placeholder="Search" aria-label="Search">
+                <input class="form-control rounded-0" type="text" v-model="searchText" placeholder="Search" aria-label="Search">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary rounded-0" type="button" @click="clearSearch">
                   <i class="fas fa-times"></i>
@@ -25,7 +25,7 @@
               </div>
               </div>
             </form>
-            </div>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -40,8 +40,8 @@
         <div class="col-12">
           <div class="row">
             <div class="col-12">
-              <div class="row py-2 Recommended_class_frame">
-                <div class="col-md-6 col-lg-4 Recommended_class mb-4" v-for="(item, index) in filterData" :key="index">
+              <transition-group tag="div" class="row py-2 Recommended_class_frame" name="fade" :duration="{ enter: 1000, leave: 100 }" appear>
+                <div class="col-md-6 col-lg-4 Recommended_class mb-4" v-for="item in filterData" :key="item.title">
                   <a href="#" class="lecture_card d-block text-dark" @click.prevent="getSelfProduct(item.id)">
                     <div class="card h-100" >
                       <div class="card_image">
@@ -64,7 +64,7 @@
                   </a>
                   <button type="button" class="btn btn-outline-dark d-block d-md-none rounded-0 w-100" @click="getSelfProduct(item.id)">前往課程一覽</button>
                 </div>
-              </div>
+              </transition-group>
             </div>
           </div>
         </div>
@@ -171,6 +171,26 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.fade-enter {
+  opacity:0;
+  transform: translateY(30px);
+}
+.fade-enter-active {
+  transition: all 1s;
+}
+.fade-enter-to {
+  opacity:1;
+}
+.fade-leave {
+  opacity: 1;
+}
+.fade-leave-active {
+  transition: all 1s;
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
 .advance_image{
   border-radius:50px;
 }
