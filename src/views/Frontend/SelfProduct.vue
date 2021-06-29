@@ -98,7 +98,7 @@
                   <del class="text-muted">原價{{ item.origin_price }}元</del>
                   <strong class="h5 mb-0">現在只要<span class="text-danger">{{ item.price }}</span>元</strong>
                 </div>
-                <button type="button" class="btn btn-outline-dark rounded-0 btn-md-lg rounded-0 w-100" @click="getProduct(item.id)">前去課程介紹</button>
+                <button type="button" class="btn btn-outline-dark rounded-0 btn-md-lg rounded-0 w-100" @click="changeProduct(item.id)">前去課程介紹</button>
               </div>
             </div>
             </slide>
@@ -122,6 +122,9 @@ export default {
     }
   },
   methods: {
+    changeProduct (id) {
+      this.$router.push(`/lecture/${id}`)
+    },
     getProduct (id) {
       document.documentElement.scrollTop = 0
       this.$store.dispatch('getAssignedProduct', id)
@@ -169,6 +172,14 @@ export default {
     lecture () {
       this.getRelateProducts()
       return this.$store.state.assignProduct
+    }
+  },
+  beforeRouteUpdate (to, from, next) {
+    if (to.path !== from.path) {
+      document.documentElement.scrollTop = 0
+      const arr = to.path.split('/')
+      this.$store.dispatch('getAssignedProduct', arr[arr.length - 1])
+      next()
     }
   }
 }
