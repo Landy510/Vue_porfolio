@@ -50,21 +50,21 @@
           <a href="#" class="content-option d-flex w-100" @click.prevent="ToProduct('重訓')">
             <div class="cover"></div>
             <span class="text h2 font-weight-bold">重訓課程</span>
-            <div class="content_img w-100" style="background-image:url('https://upload.cc/i1/2021/03/05/3ezsnD.jpg');"></div>
+            <div class="content_img w-100" style="background-image:url('https://i.postimg.cc/HsQNthfn/3ezsnD.jpg');"></div>
           </a>
         </div>
         <div class="col-md-4">
           <a href="#" class="content-option d-flex w-100" @click.prevent="ToProduct('有氧')">
             <div class="cover"></div>
             <span class="text h2 font-weight-bold">有氧課程</span>
-            <div class="content_img w-100" style="background-image:url('https://upload.cc/i1/2021/02/05/6lcXf2.jpg');"></div>
+            <div class="content_img w-100" style="background-image:url('https://i.postimg.cc/cLxFB4Rk/6lcXf2.jpg');"></div>
           </a>
         </div>
         <div class="col-md-4">
           <a href="#" class="content-option d-flex w-100" @click.prevent="ToProduct('飲食課程')">
             <div class="cover"></div>
             <span class="text h2 font-weight-bold">飲食課程</span>
-            <div class="content_img w-100" style="background-image:url('https://upload.cc/i1/2021/03/29/nXupqk.jpg');"></div>
+            <div class="content_img w-100" style="background-image:url('https://i.postimg.cc/Zq0jX7Dr/nXupqk.jpg');"></div>
           </a>
         </div>
       </div>
