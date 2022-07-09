@@ -60,9 +60,9 @@ export default {
     },
     updateMap () {
       this.data.forEach(item => {
-        L.marker([item['經度'], item['緯度']]).addTo(osmMap).bindPopup(`<strong>據點名稱:${item['場地名稱']}</strong><br>
+        L.marker([item['北緯'], item['東經']]).addTo(osmMap).bindPopup(`<strong>據點名稱:${item['場地名稱']}</strong><br>
           <strong>地址:<a href="https://www.google.com.tw/maps/place/${item['地址']}" target="_blank">${item['地址']}</a></strong><br>
-          <strong>電話:${item['連絡電話']}</strong>`)
+          <strong>電話:${item['電話']}</strong>`)
       })
       osmMap.panTo(new L.LatLng(24.130993, 120.721122))
       L.marker([24.130993, 120.721122]).addTo(osmMap).bindPopup(`<strong>據點名稱:Berserker 南西店</strong><br>
@@ -71,19 +71,19 @@ export default {
       this.$store.state.isLoading = false
     },
     PenTo (location) {
-      osmMap.panTo(new L.LatLng(location['經度'], location['緯度']))
-      L.marker([location['經度'], location['緯度']]).addTo(osmMap).bindPopup(`<strong>據點名稱:${location['場地名稱']}</strong><br>
+      osmMap.panTo(new L.LatLng(location['北緯'], location['東經']))
+      L.marker([location['北緯'], location['東經']]).addTo(osmMap).bindPopup(`<strong>據點名稱:${location['場地名稱']}</strong><br>
           <strong>地址:<a href="https://www.google.com.tw/maps/place/${location['地址']}" target="_blank">${location['地址']}</a></strong><br>
-          <strong>電話:${location['連絡電話']}</strong>`).openPopup()
+          <strong>電話:${location['電話']}</strong>`).openPopup()
     }
   },
   mounted () {
     const vm = this
     vm.axios.defaults.withCredentials = false
-    const api = 'https://datacenter.taichung.gov.tw/swagger/OpenData/8f477165-6874-4856-b60d-38029958e723'
+    const api = ' https://datacenter.taichung.gov.tw/swagger/OpenData/c60986c5-03fb-49b9-b24f-6656e1de02aa'
+    vm.$store.state.isLoading = true
     vm.$http.get(api).then((Response) => {
-      vm.$store.state.isLoading = true
-      vm.data = Response.data
+      vm.data = Response.data.slice(0, 8)
       for (let i = 0; i !== vm.data.length; i++) {
         vm.data[i].image = storeImage[i]
         vm.data[i]['場地名稱'] = storeTile[i]
